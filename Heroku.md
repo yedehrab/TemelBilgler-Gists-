@@ -5,6 +5,19 @@
 ## Heroku Önemli Notlar
 ---
 
+### Heroku varsayılan atamaları
+
+```bash
+NPM_CONFIG_LOGLEVEL=error
+NODE_ENV=production
+NODE_MODULES_CACHE=true
+NODE_VERBOSE=false
+```
+
+> Bu atamalara kod içerisinden `process.env.<üsttekilerden biri>` şeklinde erişilebilir. 
+> 
+> *console.log(process.env.NODE_ENV) gibi*
+
 ### Package.json dosyası
 
 > Heroku aldığı node.js uygulamasındaki **start scriptini** çalıştırır. Yani "npm run start" komutunu işler.
