@@ -1,5 +1,7 @@
 # Heroku Git Komutları
 
+[Buraya tıklayarak detaylı bilgileri alabilirsin](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+
 ## Bu komutların çalışması için heroku-cli'nin yüklü olması lazım
 
 ```cmd 
