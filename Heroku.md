@@ -99,6 +99,8 @@ heroku logs --tail -a [uygulama adı]
 ---
 Babel gibi ek uygulamalar kullanıyorsanız bu kısım sizin için oldukça önemlidir.
 
+> **Not**: Tüm es5 olmayan dosyaları *babel* ile es5'e çevirip herokuya yüklemek performans açısından daha sağlıklıdır.
+
 ### Heroku üretim modunu kapatma
 
 ```cmd
