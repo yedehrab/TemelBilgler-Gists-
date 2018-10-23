@@ -13,10 +13,12 @@ git init
 #### Var olan git için
 
 ```cmd
-git clone [url]
+git clone [url] [kopyalanacağı yol]
 ```
+* url: Github'daki projenin adresi (https://...)
+* kopyalanacağı yol: Bilgisayardaki özel bir yol (C:\Desktop\Temp)
 
-> Var olan git'i kopyalar
+> Var olan git'i istenen dizine kopyalar
 
 
 ### Proje dosyalarımızın depoya eklenmesi
