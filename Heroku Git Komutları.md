@@ -7,6 +7,8 @@
 ```cmd 
 npm install -g heroku
 ```
+> Npm üzerinden heroku yükleme işlemi
+
 
 ### Heroku'ya giriş yapma
 
@@ -37,6 +39,12 @@ git push heroku master
 ```
 
 > Değişkliklikler heroku uygulmamıza eklenecektir.
+
+### Uygulamayı başlatma
+
+```cmd
+heroku open
+```
 
 ### Ek not
 
