@@ -2,11 +2,22 @@
 
 ### Git deposunu başlatma
 
+#### Yeni git için
+
 ```cmd
 git init
 ```
 
 > Git için gerkeli olan dosyaları oluşturur.
+
+#### Var olan git için
+
+```cmd
+git clone [url]
+```
+
+> Var olan git'i kopyalar
+
 
 ### Proje dosyalarımızın depoya eklenmesi
 
