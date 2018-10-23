@@ -1,9 +1,44 @@
-# Heroku Git Komutları
+# Heroku
 
 [Buraya tıklayarak detaylı bilgileri alabilirsin](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
+## Heroku Önemli Notlar
+---
 
-## Önemli Notlar
+### Package.json dosyası
+
+> Heroku aldığı node.js uygulamasındaki **start scriptini** çalıştırır. Yani "npm run start" komutunu işler.
+> Bu sebeple **package.json** dosyası olmak zorunda ve **start scriptini** içermek zorundadır.
+
+Örnek package.json dosyası 
+
+```javascript
+{
+  "name": "temp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+### Heroku port ayarı
+
+```javascript
+port = process.env.PORT || 5000
+```
+> Heroku kendiliğinden port atama işlemi yapmaktadır. Bu sebeple dinlediğimiz portu **process.env.PORT** yapmak zorundayız.
+
+
+## Heroku Komutları
 ---
 
 ### Bu komutların çalışması için heroku-cli'nin yüklü olması lazım
@@ -58,41 +93,6 @@ heroku logs --tail -a [uygulama adı]
 * uygulama adı: mytempsite (herokudaki uygulama adımız)
 
 > Uygulmamız çalışırken yapılan işlemleri raporlar
-
-## Ek notlar
----
-
-### Package.json dosyası
-
-> Heroku aldığı node.js uygulamasındaki **start scriptini** çalıştırır. Yani "npm run start" komutunu işler.
-> Bu sebeple **package.json** dosyası olmak zorunda ve **start scriptini** içermek zorundadır.
-
-Örnek package.json dosyası 
-
-```javascript
-{
-  "name": "temp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
-}
-```
-
-### Heroku port ayarı
-
-```javascript
-port = process.env.PORT || 5000
-```
-> Heroku kendiliğinden port atama işlemi yapmaktadır. Bu sebeple dinlediğimiz portu **process.env.PORT** yapmak zorundayız.
 
 
 ## Heroku Ek Ayarlar
