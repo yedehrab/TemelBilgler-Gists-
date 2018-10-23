@@ -2,13 +2,16 @@
 
 [Buraya tıklayarak detaylı bilgileri alabilirsin](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 
-## Bu komutların çalışması için heroku-cli'nin yüklü olması lazım
+
+## Önemli Notlar
+---
+
+### Bu komutların çalışması için heroku-cli'nin yüklü olması lazım
 
 ```cmd 
 npm install -g heroku
 ```
 > Npm üzerinden heroku yükleme işlemi
-
 
 ### Heroku'ya giriş yapma
 
@@ -46,7 +49,20 @@ git push heroku master
 heroku open
 ```
 
-### Ek not
+### Hata raporlarını görüntüleme
+
+```cmd 
+heroku logs --tail -a [uygulama adı]
+```
+
+* uygulama adı: mytempsite (herokudaki uygulama adımız)
+
+> Uygulmamız çalışırken yapılan işlemleri raporlar
+
+## Ek notlar
+---
+
+### Package.json dosyası
 
 > Heroku aldığı node.js uygulamasındaki **start scriptini** çalıştırır. Yani "npm run start" komutunu işler.
 > Bu sebeple **package.json** dosyası olmak zorunda ve **start scriptini** içermek zorundadır.
@@ -70,3 +86,39 @@ heroku open
   "license": "ISC"
 }
 ```
+
+### Heroku port ayarı
+
+```javascript
+port = process.env.PORT || 5000
+```
+> Heroku kendiliğinden port atama işlemi yapmaktadır. Bu sebeple dinlediğimiz portu **process.env.PORT** yapmak zorundayız.
+
+
+## Heroku Ek Ayarlar
+---
+Babel gibi ek uygulamalar kullanıyorsanız bu kısım sizin için oldukça önemlidir.
+
+### Heroku üretim modunu kapatma
+
+```cmd
+heroku config:set NPM_CONFIG_PRODUCTION=false
+```
+
+> Üretim modunu kapatır. Bu sayede heroku **package.json** dosyasındaki **dev-dependencies** içindekilerini
+> indirir. Ardından tekrar bu mod isteğe bağlı açılabilir
+
+### Heroku Bash Erişimi
+
+```cmd
+heroku run bash
+```
+
+> Bu komut ile terminale erişmiş oluruz. Bu sayede npm komutlarımızı çalıştırabiliriz.
+
+```cmd
+npm install
+```
+
+> Yukarıdaki komut ile gerekli olan uygulamaları (dev-dependencies) kendimiz indirebiliriz.
+
