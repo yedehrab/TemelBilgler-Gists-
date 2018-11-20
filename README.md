@@ -59,6 +59,15 @@ git push -u origin master
 
 Zaman zaman gerekebilecek git komutları
 
+## Git Üzerinde Kullanıcı Bilgilerini Saklama
+
+```bash
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+```
+
+> Detaylar için [buraya](https://help.github.com/articles/caching-your-github-password-in-git/) tıklayabilirsin.
+
 ### Remote Kaldırma & Gösterme
 
 ```bash
