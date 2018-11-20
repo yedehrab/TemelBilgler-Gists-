@@ -4,7 +4,7 @@
 
 #### Yeni git için
 
-```cmd
+```bash
 git init
 ```
 
@@ -12,45 +12,45 @@ git init
 
 #### Var olan git için
 
-```cmd
+```bash
 git clone [url] [kopyalanacağı yol]
 ```
-* url: Github'daki projenin adresi (https://...)
-* kopyalanacağı yol: Bilgisayardaki özel bir yol (C:\Desktop\Temp)
+* `url` Github'daki projenin adresi (https://...)
+* `kopyalanacağı yol` Bilgisayardaki özel bir yol (C:\Desktop\Temp)
 
 > Var olan git'i istenen dizine kopyalar
 
 
 ### Proje dosyalarımızın depoya eklenmesi
 
-```cmd
+```bash
 git add .
 ```
 > Bütün dosyalar (. dizindeki tüm dosyalar demektir.) eklenir.
 
 ### Teslim etme hazırlığı ve yorum ekleme
 
-```cmd
+```bash
 git commit -m "Yorum" -m "Açıklama"
 ```
-* -m: message anlamına gelmektedir.
+* -`m` message anlamına gelmektedir.
 
 > Mesaj ve açıklama ile ile depoya teslim için hazırlama
 
 ### Teslim edilecek URL'i belirleme
 
-```cmd
+```bash
 git remote add origin [url]
 ```
 
-* [url]: Yüklemek istediğimiz yerin adresi
+* `url` Yüklemek istediğimiz yerin adresi
 
 > Github için, projenizin konumuna gelip, *download kısmındaki kopyalama resmine* basarak, projenizin url'ini kopyalabilirsiniz.
 
 ### Teslim Etme
 
-```cmd
-git push origin master
+```bash
+git push -u origin master
 ```
 
 > Master olarak url'e yükleme işlemi
@@ -59,9 +59,24 @@ git push origin master
 
 Zaman zaman gerekebilecek git komutları
 
+### Remote Kaldırma & Gösterme
+
+```bash
+git remote -v
+```
+- `-v` Verbose, kontrol edilenleri gösterir.
+
+```bash
+git remote rm [branch]
+```
+
+- `branch` Kontrol türü. Mesela origin
+
+> Detaylı açıklama için [buraya](https://help.github.com/articles/removing-a-remote/) tıklayabilirsin.
+
 ### Son hatalı yüklemeyi kaldırma
 
-```cmd
+```bash
 gir reset HEAD~
 ```
 
