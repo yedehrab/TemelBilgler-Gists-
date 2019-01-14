@@ -1,5 +1,7 @@
 # Temel Git Komutları
 
+İstersen [buraya](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html) tıklayarak GitLab'ın hazırladığı özet bilgiye erişebilirsin.
+
 ## Git Kimlik Bilgilerini Ayarlama
 
 ```bash
@@ -57,10 +59,46 @@ git remote add origin [url]
 ### Teslim Etme
 
 ```bash
-git push -u origin master
+git push -u origin [branch]
 ```
 
+* `branch` Varsa dal ismi (bilginiz yoksa 'master' kullanın)
+  * git push -u origin master
+
 > Master olarak url'e yükleme işlemi
+
+## Branch İşlemleri
+
+Branch (dal) git yığıtlarında imleç görevi gören araçlardır. Ek bilgi için [buraya](https://git-scm.com/book/tr/v1/Git-te-Dallanma-Dal-Nedir%3F) tıklayabilirsin. 
+
+> Genelde master işlemi (projenin aslı) ile test işlemlerini birbirinden ayrı yerlerde saklamak amaçlı kullanılırlar
+
+![branch-pic](https://git-scm.com/figures/18333fig0305-tn.png)
+
+> `HEAD` üzerinde bulunduğumuz branch'i (imleci | dalı) gösterir.
+
+> `Yeşil renkli kareler` Commit işlemlerini gösterir.
+
+![detailed-branch-pic](https://git-scm.com/figures/18333fig0309-tn.png)
+
+## Branch (Dal) Oluşturma
+```bash
+git branch [branch_ismi]
+```
+
+> Yeni bir branch (imleç) oluştulur. Test işlemleri için sık kullanılırlar.
+
+### Branch (Dal) Değiştirme
+
+```bash
+git checkout [branch]
+```
+
+* `branch` Seçilecek dal (HEAD (ana dal) için 'master' kullanılır)
+  * git checkout master
+
+> Seçili branch'i değiştiri. (Master iken test'e geçmek gibi)
+
 
 ## Faydalı git komutları
 
